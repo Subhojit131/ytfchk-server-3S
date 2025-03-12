@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -38,6 +38,4 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git add .
           git commit -m "Auto-fix: ESLint & Prettier applied" || exit 0
-          git push https://github.com/Subhojit131/ytfchk-server-3S.git HEAD:main
-
-
+          git push https://x-access-token:${PAT_TOKEN}@github.com/Subhojit131/ytfchk-server-3S.git HEAD:${{ github.ref_name }}
