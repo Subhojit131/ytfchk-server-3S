@@ -17,11 +17,11 @@ export default [
   {
     rules: {
       "no-unused-vars": "warn",
-      "semi": ["error", "always"],
-      "quotes": ["error", "double"],
-      "eqeqeq": "error",
-      "prettier/prettier": "error"
+      semi: ["error", "always"],
+      quotes: ["error", "double"],
+      eqeqeq: "error",
+      "prettier/prettier": "error",
     },
     plugins: { prettier: pluginPrettier },
-  }
+  },
 ];
