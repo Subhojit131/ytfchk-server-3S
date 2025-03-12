@@ -22,6 +22,8 @@ VS/
 kdev4/
 *.swap
 *.kate-swp
-
+node_modules/
+env/
+venv/
 
 .cache/
