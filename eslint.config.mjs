@@ -11,7 +11,7 @@ export default [
       ecmaVersion: "latest",
       sourceType: "module",
     },
-    files: ["**/*.js", "**/*.mjs", "**/*.go"],
+    files: ["**/*.js", "**/*.mjs"],
   },
   pluginJs.configs.recommended,
   {
