@@ -30,12 +30,13 @@ jobs:
       - name: Run Prettier and fix issues
         run: npx prettier --write .
 
-      - name: Commit and push fixes
+         - name: Commit and push fixes
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions@github.com"
           git add .
           git commit -m "Auto-fix: ESLint & Prettier applied" || exit 0
-          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
+          git push https://x-access-token:${PAT_TOKEN}@github.com/Subhojit131/ytfchk-server-3S.git HEAD:${{ github.ref_name }}
+
