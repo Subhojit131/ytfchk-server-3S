@@ -30,7 +30,7 @@ jobs:
       - name: Run Prettier and fix issues
         run: npx prettier --write .
 
-         - name: Commit and push fixes
+      - name: Commit and push fixes
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
