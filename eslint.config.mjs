@@ -9,7 +9,7 @@ export default [
     languageOptions: {
       globals: globals.browser,
       ecmaVersion: "latest",
-      sourceType: "commonjs",
+      sourceType: "module",
     },
     files: ["**/*.js", "**/*.mjs"],
   },
