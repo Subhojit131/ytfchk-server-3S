@@ -6,9 +6,11 @@ import pluginPrettier from "eslint-plugin-prettier";
 export default [
   {
     languageOptions: {
-      globals: globals.browser,
+      globals: {
+        ...globals.node, // Use Node.js globals
+      },
       ecmaVersion: "latest",
-      sourceType: "module",
+      sourceType: "module", // Or "commonjs" if needed
     },
     files: ["**/*.js", "**/*.mjs"],
   },
