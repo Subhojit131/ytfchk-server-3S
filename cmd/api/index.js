@@ -1,12 +1,20 @@
-import express from "express"; // Change `require` to `import`
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+
 const app = express();
-const port = 3000;
+const PORT = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+// Middleware
+app.use(cors()); // Allows frontend to send requests
+app.use(bodyParser.json()); // Parses JSON requests
+
+// Route to receive and log data
+app.post("/data", (req, res) => {
+  console.log("Received data:", req.body);
+  res.status(200).json("Data received successfully");
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
-console.log("Hello, world!");
